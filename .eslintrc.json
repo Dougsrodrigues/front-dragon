@@ -5,21 +5,25 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "standard",
+    "standard-with-typescript",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "commonjs"
   },
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "simple-import-sort"
   ],
   "rules": {
     "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "simple-import-sort/imports": "error"
   },
   "settings": {
     "react":{
