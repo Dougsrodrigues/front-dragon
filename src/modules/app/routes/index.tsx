@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { SignIn } from '../../authentication/pages/sign-in';
-import { Home } from '../../home/pages/home';
+import { ListDragons } from '../../dragons/pages/list-dragons';
+import { AuthenticatedLayout } from '../components/authenticated-layout';
 import { ProtectedRoutes } from '../components/protected-routes';
 
 export const router = createBrowserRouter([
@@ -14,7 +15,13 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <AuthenticatedLayout />,
+        children: [
+          {
+            path: '/',
+            element: <ListDragons />,
+          },
+        ],
       },
     ],
   },

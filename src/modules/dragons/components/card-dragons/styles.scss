@@ -1,0 +1,11 @@
+@import '../../../app/styles/colors.scss';
+
+.card-dragons-container{
+  border: 2px solid $tertiary;
+  padding:16px;
+  border-radius: 8px;
+
+  h2{
+    color: $white
+  }
+}

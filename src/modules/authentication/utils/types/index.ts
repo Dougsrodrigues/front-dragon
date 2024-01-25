@@ -15,8 +15,10 @@ export interface SignInProps {
 }
 
 export interface SignInResponse {
-  user: {
-    name: string;
-    isAuthenticated: boolean;
-  };
+  user: User;
+}
+
+export interface User {
+  name: string;
+  isAuthenticated: boolean;
 }

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 import { LOCAL_STORAGE_AUTHENTICATION_KEY } from '../../authentication/utils/constants';
 import { type SignInResponse } from '../../authentication/utils/types';
@@ -16,5 +16,5 @@ export function ProtectedRoutes() {
       navigate('/sign-in');
     }
   }, [localStorageDataUser?.user?.isAuthenticated, navigate]);
-  return <></>;
+  return <Outlet />;
 }

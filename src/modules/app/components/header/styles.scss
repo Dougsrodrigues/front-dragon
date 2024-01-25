@@ -1,0 +1,27 @@
+
+@import '../../styles/colors.scss';
+
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  padding: 16px;
+}
+
+.header-content{
+  width: 100%;
+  max-width: 1160px;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    color: $white;
+    font-size: 2rem;
+  }
+
+   svg {
+    cursor: pointer;
+    color: $white;
+   }
+}

@@ -1,0 +1,1 @@
+export const LIST_DRAGONS_KEY = 'LIST_DRAGONS_KEY';
