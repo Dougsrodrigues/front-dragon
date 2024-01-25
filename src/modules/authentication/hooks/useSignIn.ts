@@ -1,14 +1,14 @@
 import { useMutation } from '@tanstack/react-query';
-import { useSetAtom } from 'jotai';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { authenticationAtom } from '../atoms/authentication-atom';
+import { localStorageAdapter } from '../../app/infra/lib/local-storage-adapter';
 import { authenticationServices } from '../services/authentication-services';
-import { type HandleSignInProps } from '../utils/types';
+import { LOCAL_STORAGE_AUTHENTICATION_KEY } from '../utils/constants';
+import { type HandleSignInProps, type SignInResponse } from '../utils/types';
 
 export function useSignIn() {
-  const setAuthentication = useSetAtom(authenticationAtom);
   const navigate = useNavigate();
 
   const { mutateAsync: authenticate } = useMutation({
@@ -17,15 +17,27 @@ export function useSignIn() {
 
   async function handleSignIn(data: HandleSignInProps) {
     try {
-      await authenticate(data);
-      setAuthentication({
-        isAuthenticated: true,
-      });
+      const response = await authenticate(data);
+      localStorageAdapter.set(
+        LOCAL_STORAGE_AUTHENTICATION_KEY,
+        JSON.stringify(response),
+      );
+
       navigate('/');
     } catch (error) {
       toast.error('Houve um erro ao fazer login, tente novamente mais tarde!');
     }
   }
+
+  useEffect(() => {
+    const localStorageDataUser = localStorageAdapter.get<SignInResponse>(
+      LOCAL_STORAGE_AUTHENTICATION_KEY,
+    );
+
+    if (localStorageDataUser?.user?.isAuthenticated ?? false) {
+      navigate('/');
+    }
+  }, [navigate]);
 
   return { handleSignIn };
 }

@@ -13,3 +13,10 @@ export interface SignInProps {
   email: string;
   password: string;
 }
+
+export interface SignInResponse {
+  user: {
+    name: string;
+    isAuthenticated: boolean;
+  };
+}
