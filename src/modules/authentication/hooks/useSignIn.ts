@@ -21,7 +21,7 @@ export function useSignIn() {
       setAuthentication({
         isAuthenticated: true,
       });
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       toast.error('Houve um erro ao fazer login, tente novamente mais tarde!');
     }
