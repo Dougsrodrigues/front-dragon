@@ -1,0 +1,41 @@
+@import '../../../styles/colors.scss';
+.input-content{
+  display: flex;
+  border: 2px solid $tertiary;
+  align-items: center;
+
+  padding: 8px 16px;
+
+  border-radius: 8px;
+
+  &:has(input:focus) {
+   border-color: #bd6e5c;
+  }
+}
+
+.input {
+  border: 0;
+  background: transparent;
+  width:100%;
+
+  color: $white;
+
+  &:focus{
+    outline: 0,
+  }
+
+  &::placeholder{
+    color: $white;
+  }
+}
+
+.input-error-message {
+  color: #f75a68;
+  font-size: 0.75rem;
+}
+
+.input-label {
+  display:inline-block;
+  color: $white;
+  margin-bottom: 8px;
+}

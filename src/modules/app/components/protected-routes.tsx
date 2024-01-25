@@ -6,11 +6,10 @@ import { type SignInResponse } from '../../authentication/utils/types';
 import { localStorageAdapter } from '../infra/lib/local-storage-adapter';
 
 export function ProtectedRoutes() {
+  const navigate = useNavigate();
   const localStorageDataUser = localStorageAdapter.get<SignInResponse>(
     LOCAL_STORAGE_AUTHENTICATION_KEY,
   );
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!(localStorageDataUser?.user?.isAuthenticated ?? false)) {
