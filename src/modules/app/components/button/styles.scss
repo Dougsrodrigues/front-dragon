@@ -1,26 +1,71 @@
 @import '../../styles/colors.scss';
+@import '../../styles/typograph.scss';
 
 .button-container{
   all:unset;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-weight: 700;
+  font-size: $components-button-g;
+  text-transform: uppercase;
+  transition: 0.4s;
+  line-height: 1.3rem;
 
   color: $white;
   border-radius: 8px;
 
-  padding: 8px 16px;
 
-  cursor: pointer,
+
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 }
 
 .variant-primary{
-  background-color: $green;
+  padding: 0.75rem 2.8rem;
+  background-color: $yellow;
+  &:not(:disabled):hover {
+    background: $yellow-dark;
+  }
 }
 
 .variant-secondary{
-  border: 1px solid $secondary;
+  border: 1px solid $base-error;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin-left: 0.3rem;
+  transition: 0.4s;
+  cursor: pointer;
+  svg{
+    color:$base-error;
+  }
+  &:hover {
+    background: $base-error-ligth;
+  }
+
+}
+
+.variant-tertiary{
+  background: $purple-dark;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin-left: 0.3rem;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background: $purple;
+  }
 }
 
 .loader-button {

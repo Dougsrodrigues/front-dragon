@@ -13,7 +13,12 @@ function get<T>(key: string) {
   return null;
 }
 
+function remove(key: string) {
+  localStorage.removeItem(key);
+}
+
 export const localStorageAdapter = {
   set,
   get,
+  remove,
 };

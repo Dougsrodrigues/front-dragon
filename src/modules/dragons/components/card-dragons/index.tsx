@@ -2,6 +2,8 @@ import './styles.scss';
 
 import { MagnifyingGlass, Trash } from 'phosphor-react';
 
+import { Button } from '../../../app/components/button';
+import { BUTTON_VARIANTS } from '../../../app/utils/constants';
 import { useDeleteDragon } from '../../hooks/useDeleteDragon';
 import { type DragonsResponse } from '../../utils/types';
 
@@ -32,7 +34,12 @@ export function CardDragons({
       </div>
 
       <div className="card-dragons-footer">
-        <button className="card-dragons-search-button">
+        <Button
+          variant={BUTTON_VARIANTS.Tertiary}
+          onClick={() => {
+            handleClickSeeDetails(dragon.id);
+          }}
+        >
           <MagnifyingGlass
             size={20}
             weight="bold"
@@ -40,15 +47,16 @@ export function CardDragons({
               handleClickSeeDetails(dragon.id);
             }}
           />
-        </button>
-        <button
-          className="card-dragons-delete-button"
+        </Button>
+
+        <Button
+          variant={BUTTON_VARIANTS.Secondary}
           onClick={async () => {
             await handleDeleteDragon(dragon.id);
           }}
         >
           <Trash size={20} weight="bold" />
-        </button>
+        </Button>
       </div>
     </div>
   );

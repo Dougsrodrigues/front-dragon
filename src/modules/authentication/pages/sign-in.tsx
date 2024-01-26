@@ -23,7 +23,7 @@ export function SignIn() {
   return (
     <div className="auth-container">
       <div className="auth-content">
-        <h2>Dragon</h2>
+        <h2>Dragon App.</h2>
         <form onSubmit={handleSubmit(handleSignIn)}>
           <Input
             label="E-mail"

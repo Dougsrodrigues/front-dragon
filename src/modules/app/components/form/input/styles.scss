@@ -1,16 +1,22 @@
 @import '../../../styles/colors.scss';
+
 .input-content{
   display: flex;
-  border: 2px solid $tertiary;
+  border: 1.5px solid $base-button;
+  background-color: $base-input;
   align-items: center;
 
   padding: 8px 16px;
 
   border-radius: 8px;
 
-  &:has(input:focus) {
-   border-color: #bd6e5c;
+  &:focus-within {
+    border: 1.5px solid $yellow-dark;
   }
+}
+
+.error-input{
+  border: 1.5px solid $base-error;
 }
 
 .input {
@@ -18,24 +24,24 @@
   background: transparent;
   width:100%;
 
-  color: $white;
+  color: $base-text;
 
   &:focus{
     outline: 0,
   }
 
   &::placeholder{
-    color: $white;
+    color: $base-text;
   }
 }
 
 .input-error-message {
-  color: #f75a68;
+  color: $base-error;
   font-size: 0.75rem;
 }
 
 .input-label {
   display:inline-block;
-  color: $white;
+  color: $base-text;
   margin-bottom: 8px;
 }
