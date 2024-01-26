@@ -9,11 +9,15 @@ export function useListDragons() {
   const { data: dragons, isLoading } = useQuery({
     queryKey: [LIST_DRAGONS_KEY],
     queryFn: dragonsServices.getDragons,
+    staleTime: 60 * 1000, // 10 minutes
   });
 
   const handleClickSeeDetails = (id: string) => {
     navigate(`dragon/${id}`);
   };
+  const handleRegisterNewDragon = () => {
+    navigate(`create-dragon`);
+  };
 
-  return { dragons, isLoading, handleClickSeeDetails };
+  return { dragons, isLoading, handleClickSeeDetails, handleRegisterNewDragon };
 }

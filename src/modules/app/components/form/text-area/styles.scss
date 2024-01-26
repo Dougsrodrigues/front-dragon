@@ -17,9 +17,10 @@
 
 .error-input{
   border: 1.5px solid $base-error;
+
 }
 
-.input {
+.input-textarea {
   border: 0;
   background: transparent;
   width:100%;
@@ -35,12 +36,12 @@
   }
 }
 
-.input-error-message {
+.input-error-message-textarea {
   color: $base-error;
   font-size: 0.75rem;
 }
 
-.input-label {
+.input-label-textarea {
   display:inline-block;
   color: $base-text;
   margin-bottom: 8px;

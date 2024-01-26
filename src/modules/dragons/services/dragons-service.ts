@@ -1,5 +1,15 @@
 import { api } from '../../app/infra/lib/axios';
-import { type DragonsResponse } from '../utils/types';
+import {
+  type CreateDragonBodyProps,
+  type DragonsResponse,
+} from '../utils/types';
+
+async function createDragon(
+  body: CreateDragonBodyProps,
+): Promise<DragonsResponse> {
+  const { data } = await api.post('/dragon', body);
+  return data;
+}
 
 async function getDragons(): Promise<DragonsResponse[]> {
   const { data } = await api.get('/dragon');
@@ -14,4 +24,5 @@ async function deleteDragon(id: string): Promise<DragonsResponse> {
 export const dragonsServices = {
   getDragons,
   deleteDragon,
+  createDragon,
 };

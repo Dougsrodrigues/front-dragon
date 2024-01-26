@@ -25,7 +25,7 @@
   }
 }
 
-.variant-primary{
+.variant-primary-md{
   padding: 0.75rem 2.8rem;
   background-color: $yellow;
   &:not(:disabled):hover {
@@ -33,7 +33,7 @@
   }
 }
 
-.variant-secondary{
+.variant-secondary-sm{
   border: 1px solid $base-error;
   padding: 4px;
   display: flex;
@@ -54,20 +54,28 @@
   }
 }
 
-.variant-tertiary{
+@mixin variant-tertiary-base{
   background: $purple-dark;
-  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  margin-left: 0.3rem;
   transition: 0.4s;
   cursor: pointer;
-
   &:hover {
     background: $purple;
   }
+}
+
+.variant-tertiary-md{
+  @include variant-tertiary-base;
+  padding: 0.75rem 2.8rem;
+
+}
+
+.variant-tertiary-sm{
+  @include variant-tertiary-base;
+  padding: 4px;
 }
 
 .loader-button {

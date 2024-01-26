@@ -3,3 +3,7 @@ export enum BUTTON_VARIANTS {
   Secondary = 'secondary',
   Tertiary = 'tertiary',
 }
+export enum BUTTON_SIZES {
+  MD = 'md',
+  SM = 'sm',
+}

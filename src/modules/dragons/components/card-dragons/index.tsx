@@ -3,7 +3,7 @@ import './styles.scss';
 import { MagnifyingGlass, Trash } from 'phosphor-react';
 
 import { Button } from '../../../app/components/button';
-import { BUTTON_VARIANTS } from '../../../app/utils/constants';
+import { BUTTON_SIZES, BUTTON_VARIANTS } from '../../../app/utils/constants';
 import { useDeleteDragon } from '../../hooks/useDeleteDragon';
 import { type DragonsResponse } from '../../utils/types';
 
@@ -35,6 +35,7 @@ export function CardDragons({
 
       <div className="card-dragons-footer">
         <Button
+          size={BUTTON_SIZES.SM}
           disabled={isDeleting}
           variant={BUTTON_VARIANTS.Tertiary}
           onClick={() => {
@@ -51,6 +52,7 @@ export function CardDragons({
         </Button>
 
         <Button
+          size={BUTTON_SIZES.SM}
           variant={BUTTON_VARIANTS.Secondary}
           disabled={isDeleting}
           isLoading={isDeleting}
