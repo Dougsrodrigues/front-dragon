@@ -43,13 +43,15 @@
   margin-left: 0.3rem;
   transition: 0.4s;
   cursor: pointer;
+
+
   svg{
     color:$base-error;
   }
+
   &:hover {
     background: $base-error-ligth;
   }
-
 }
 
 .variant-tertiary{
@@ -86,4 +88,9 @@
     100% {
         transform: rotate(360deg);
     }
+  }
+
+  .variant-loader-secondary{
+    border: 2px solid $base-error;
+    border-bottom-color: transparent;
   }

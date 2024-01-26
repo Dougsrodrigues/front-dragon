@@ -17,7 +17,7 @@ export function CardDragons({
   handleClickSeeDetails,
   ...rest
 }: CardDragonsProps) {
-  const { handleDeleteDragon } = useDeleteDragon();
+  const { handleDeleteDragon, isDeleting } = useDeleteDragon();
 
   return (
     <div className="card-dragons-container" {...rest}>
@@ -35,6 +35,7 @@ export function CardDragons({
 
       <div className="card-dragons-footer">
         <Button
+          disabled={isDeleting}
           variant={BUTTON_VARIANTS.Tertiary}
           onClick={() => {
             handleClickSeeDetails(dragon.id);
@@ -51,6 +52,8 @@ export function CardDragons({
 
         <Button
           variant={BUTTON_VARIANTS.Secondary}
+          disabled={isDeleting}
+          isLoading={isDeleting}
           onClick={async () => {
             await handleDeleteDragon(dragon.id);
           }}

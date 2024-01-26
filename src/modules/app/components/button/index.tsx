@@ -15,7 +15,11 @@ export function Button({
 }: ButtonProps) {
   return (
     <button className={`button-container variant-${variant}`} {...rest}>
-      {isLoading ? <span className="loader-button" /> : children}
+      {isLoading ? (
+        <span className={`loader-button variant-loader-${variant}`} />
+      ) : (
+        children
+      )}
     </button>
   );
 }
