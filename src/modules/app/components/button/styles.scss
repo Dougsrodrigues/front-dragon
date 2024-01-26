@@ -6,13 +6,21 @@
   align-items: center;
   justify-content: center;
 
-  background-color: $secondary;
+
   color: $white;
   border-radius: 8px;
 
   padding: 8px 16px;
 
   cursor: pointer,
+}
+
+.variant-primary{
+  background-color: $green;
+}
+
+.variant-secondary{
+  border: 1px solid $secondary;
 }
 
 .loader-button {

@@ -5,6 +5,9 @@ import { LOCAL_STORAGE_AUTHENTICATION_KEY } from '../../authentication/utils/con
 import { type SignInResponse } from '../../authentication/utils/types';
 import { localStorageAdapter } from '../infra/lib/local-storage-adapter';
 
+// O ideal seria criar uma logica usando interceptor do axios para escutar se o code da requisição
+// é  401 e dai fazer o redirect
+
 export function ProtectedRoutes() {
   const navigate = useNavigate();
   const localStorageDataUser = localStorageAdapter.get<SignInResponse>(

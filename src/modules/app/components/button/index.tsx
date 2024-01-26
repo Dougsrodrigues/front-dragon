@@ -1,12 +1,20 @@
 import './styles.scss';
+
+import { BUTTON_VARIANTS } from '../../utils/constants';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   isLoading?: boolean;
+  variant?: BUTTON_VARIANTS;
 }
 
-export function Button({ children, isLoading = false, ...rest }: ButtonProps) {
+export function Button({
+  children,
+  isLoading = false,
+  variant = BUTTON_VARIANTS.Primary,
+  ...rest
+}: ButtonProps) {
   return (
-    <button className="button-container" {...rest}>
+    <button className={`button-container variant-${variant}`} {...rest}>
       {isLoading ? <span className="loader-button" /> : children}
     </button>
   );

@@ -14,7 +14,6 @@ export const router = createBrowserRouter([
     element: <ProtectedRoutes />,
     children: [
       {
-        path: '/',
         element: <AuthenticatedLayout />,
         children: [
           {
