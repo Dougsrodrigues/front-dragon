@@ -1,0 +1,5 @@
+@import '../create-dragon/styles.scss';
+
+.edit-dragon-container{
+  @include dragon-container
+}

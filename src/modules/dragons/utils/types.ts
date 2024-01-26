@@ -1,12 +1,12 @@
 import { type z } from 'zod';
 
-import { type createDragonSchema } from './schemas';
+import { type createDragonSchema, type editDragonSchema } from './schemas';
 
 export interface DragonsResponse {
   createdAt: string;
   name: string;
   type: string;
-  histories: any[] | string;
+  histories?: string;
   id: string;
 }
 
@@ -16,4 +16,12 @@ export interface CreateDragonBodyProps {
   name: string;
   type: string;
   histories: string;
+}
+
+export type EditDragonSchemaData = z.infer<typeof editDragonSchema>;
+
+export type EditDragonBodyProps = CreateDragonBodyProps;
+export interface EditDragonProps {
+  id: string;
+  body: EditDragonBodyProps;
 }

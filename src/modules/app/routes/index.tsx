@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { SignIn } from '../../authentication/pages/sign-in';
 import { CreateDragon } from '../../dragons/pages/create-dragon';
+import { EditDragon } from '../../dragons/pages/edit-dragon';
 import { ListDragons } from '../../dragons/pages/list-dragons';
 import { AuthenticatedLayout } from '../components/authenticated-layout';
 import { ProtectedRoutes } from '../components/protected-routes';
@@ -15,15 +16,22 @@ export const router = createBrowserRouter([
     element: <ProtectedRoutes />,
     children: [
       {
+        path: '/',
         element: <AuthenticatedLayout />,
         children: [
           {
+            index: true,
             path: '/',
             element: <ListDragons />,
           },
           {
-            path: '/create-dragon',
+            index: true,
+            path: '/dragon',
             element: <CreateDragon />,
+          },
+          {
+            path: '/dragon/:id',
+            element: <EditDragon />,
           },
         ],
       },

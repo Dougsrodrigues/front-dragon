@@ -1,9 +1,11 @@
 import './styles.scss';
 
-import { Button } from '../../../app/components/button';
+import { Button } from '@/modules/app/components/button';
+
 import { CardDragons } from '../../components/card-dragons';
 import { Loading } from '../../components/loading';
 import { useListDragons } from '../../hooks/useListDragons';
+
 export function ListDragons() {
   const { dragons, isLoading, handleClickSeeDetails, handleRegisterNewDragon } =
     useListDragons();

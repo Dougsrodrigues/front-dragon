@@ -2,8 +2,9 @@ import './styles.scss';
 
 import { MagnifyingGlass, Trash } from 'phosphor-react';
 
-import { Button } from '../../../app/components/button';
-import { BUTTON_SIZES, BUTTON_VARIANTS } from '../../../app/utils/constants';
+import { Button } from '@/modules/app/components/button';
+import { BUTTON_SIZES, BUTTON_VARIANTS } from '@/modules/app/utils/constants';
+
 import { useDeleteDragon } from '../../hooks/useDeleteDragon';
 import { type DragonsResponse } from '../../utils/types';
 

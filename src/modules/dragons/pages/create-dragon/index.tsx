@@ -3,9 +3,10 @@ import './styles.scss';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
-import { Button } from '../../../app/components/button';
-import { Input, TextArea } from '../../../app/components/form';
-import { BUTTON_VARIANTS } from '../../../app/utils/constants';
+import { Button } from '@/modules/app/components/button';
+import { Input, TextArea } from '@/modules/app/components/form';
+import { BUTTON_VARIANTS } from '@/modules/app/utils/constants';
+
 import { useCreateDragon } from '../../hooks/useCreateDragon';
 import { createDragonSchema } from '../../utils/schemas';
 import { type CreateDragonSchemaData } from '../../utils/types';

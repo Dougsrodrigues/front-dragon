@@ -13,10 +13,10 @@ export function useListDragons() {
   });
 
   const handleClickSeeDetails = (id: string) => {
-    navigate(`dragon/${id}`);
+    navigate(`/dragon/${id}`);
   };
   const handleRegisterNewDragon = () => {
-    navigate(`create-dragon`);
+    navigate('/dragon');
   };
 
   return { dragons, isLoading, handleClickSeeDetails, handleRegisterNewDragon };
