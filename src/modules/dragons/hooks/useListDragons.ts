@@ -1,5 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import {
+  checkIsValidDate,
+  dateFormat,
+} from '@/modules/app/utils/functions/date-formatter';
 
 import { dragonsServices } from '../services/dragons-service';
 import { LIST_DRAGONS_KEY } from '../utils/constants';
@@ -12,6 +18,18 @@ export function useListDragons() {
     staleTime: 60 * 1000, // 10 minutes
   });
 
+  const formattedDragons = useMemo(() => {
+    return dragons?.map(dragon => {
+      const date = new Date(dragon.createdAt);
+      const isValidDate = checkIsValidDate(date);
+
+      return {
+        ...dragon,
+        createdAt: isValidDate ? dateFormat.format(date) : date,
+      };
+    });
+  }, [dragons]);
+
   const handleClickSeeDetails = (id: string) => {
     navigate(`/dragon/${id}`);
   };
@@ -19,5 +37,10 @@ export function useListDragons() {
     navigate('/dragon');
   };
 
-  return { dragons, isLoading, handleClickSeeDetails, handleRegisterNewDragon };
+  return {
+    dragons: formattedDragons,
+    isLoading,
+    handleClickSeeDetails,
+    handleRegisterNewDragon,
+  };
 }
