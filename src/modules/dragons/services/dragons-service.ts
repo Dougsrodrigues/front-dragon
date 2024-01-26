@@ -6,6 +6,12 @@ async function getDragons(): Promise<DragonsResponse[]> {
   return data;
 }
 
+async function deleteDragon(id: string): Promise<DragonsResponse> {
+  const { data } = await api.delete(`/dragon/${id}`);
+  return data;
+}
+
 export const dragonsServices = {
   getDragons,
+  deleteDragon,
 };
