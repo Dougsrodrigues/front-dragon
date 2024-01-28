@@ -15,6 +15,8 @@ module.exports = {
   moduleNameMapper:{
     "^.+\\.(css|less|scss)$": "<rootDir>/node_modules/babel-jest",
     '@/(.*)': '<rootDir>/src/$1',
+    '^axios$': require.resolve('axios'),
+
   },
   testEnvironment: 'jsdom',
 

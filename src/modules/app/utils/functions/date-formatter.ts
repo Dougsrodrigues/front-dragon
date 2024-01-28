@@ -1,5 +1,5 @@
 export function checkIsValidDate(date: Date): boolean {
-  return Object.prototype.toString.call(date) === '[object Date]';
+  return !(date.toString() === 'Invalid Date');
 }
 export const dateFormat = new Intl.DateTimeFormat('pt-BR', {
   day: '2-digit',

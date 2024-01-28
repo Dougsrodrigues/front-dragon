@@ -19,8 +19,10 @@ export function useListDragons() {
   });
 
   const formattedDragons = useMemo(() => {
+    if (dragons == null) return [];
+
     return dragons?.map(dragon => {
-      const date = new Date(dragon.createdAt);
+      const date = new Date(dragon?.createdAt);
       const isValidDate = checkIsValidDate(date);
 
       return {

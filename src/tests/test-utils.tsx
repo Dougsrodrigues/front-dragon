@@ -1,20 +1,32 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import {
   render as renderTestingLibrary,
   type RenderOptions,
-  screen,
 } from '@testing-library/react';
 import { type ReactElement } from 'react';
-import { RouterProvider } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
-import { router } from '@/modules/app/routes';
+export const queryCache = new QueryCache();
 
-export const queryClient = new QueryClient();
-
-const AllTheProviders = () => {
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      staleTime: 0,
+    },
+  },
+});
+interface AllTheProvidersProps {
+  children: React.ReactNode;
+}
+const AllTheProviders = ({ children }: AllTheProvidersProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <MemoryRouter initialEntries={['/']}>{children}</MemoryRouter>;
     </QueryClientProvider>
   );
 };
@@ -28,4 +40,4 @@ const customRender = (
 export * from '@testing-library/react';
 
 // eslint-disable-next-line import/export
-export { customRender as render, screen };
+export { customRender as render };

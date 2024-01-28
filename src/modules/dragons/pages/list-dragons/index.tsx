@@ -17,7 +17,7 @@ export function ListDragons() {
   return (
     <>
       <div>
-        <Button onClick={handleRegisterNewDragon}>
+        <Button data-testid="add-new-dragon" onClick={handleRegisterNewDragon}>
           Cadastrar um novo Dragão
         </Button>
       </div>

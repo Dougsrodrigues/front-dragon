@@ -7,7 +7,7 @@ import { ListDragons } from '../../dragons/pages/list-dragons';
 import { AuthenticatedLayout } from '../components/authenticated-layout';
 import { ProtectedRoutes } from '../components/protected-routes';
 
-export const router = createBrowserRouter([
+export const routesConfig = [
   {
     path: '/sign-in',
     element: <SignIn />,
@@ -37,4 +37,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routesConfig);

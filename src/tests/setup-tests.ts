@@ -1,10 +1,7 @@
 import '@testing-library/jest-dom';
 
-import { enableFetchMocks } from 'jest-fetch-mock';
-
 import { server } from './msw';
-
-enableFetchMocks();
+import { queryCache, queryClient } from './test-utils';
 
 beforeAll(() => {
   server.listen();
@@ -12,6 +9,8 @@ beforeAll(() => {
 
 afterEach(() => {
   server.resetHandlers();
+  queryCache.clear();
+  queryClient.clear();
 });
 
 afterAll(() => {

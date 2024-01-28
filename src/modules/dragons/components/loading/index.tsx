@@ -2,7 +2,7 @@ import './styles.scss';
 
 export function Loading() {
   return (
-    <div className="loading-container">
+    <div data-testid="loading" className="loading-container">
       <span />
     </div>
   );

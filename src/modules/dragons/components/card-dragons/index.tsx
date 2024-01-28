@@ -36,6 +36,7 @@ export function CardDragons({
 
       <div className="card-dragons-footer">
         <Button
+          data-testid="details-dragon-button"
           size={BUTTON_SIZES.SM}
           disabled={isDeleting}
           variant={BUTTON_VARIANTS.Tertiary}
@@ -53,6 +54,7 @@ export function CardDragons({
         </Button>
 
         <Button
+          data-testid="delete-dragon-button"
           size={BUTTON_SIZES.SM}
           variant={BUTTON_VARIANTS.Secondary}
           disabled={isDeleting}
