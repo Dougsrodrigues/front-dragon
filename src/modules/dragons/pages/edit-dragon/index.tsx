@@ -42,21 +42,38 @@ export function EditDragon() {
         await handleEditDragon(data, id ?? '');
       })}
       className="edit-dragon-container"
+      data-testid="edit-dragon"
     >
       <h1>Edite o Dragão</h1>
 
-      <Input label="Nome" {...register('name')} error={errors?.name?.message} />
-      <Input label="Tipo" {...register('type')} error={errors?.type?.message} />
+      <Input
+        data-testid="edit-dragon-form-name-input"
+        label="Nome"
+        {...register('name')}
+        error={errors?.name?.message}
+      />
+      <Input
+        data-testid="edit-dragon-form-type-input"
+        label="Tipo"
+        {...register('type')}
+        error={errors?.type?.message}
+      />
       <TextArea
+        data-testid="edit-dragon-form-histories-input"
         label="Sobre"
         {...register('histories')}
         error={errors?.histories?.message}
       />
 
-      <Button isLoading={isEditing} disabled={isEditing}>
+      <Button
+        data-testid="edit-dragon-button"
+        isLoading={isEditing}
+        disabled={isEditing}
+      >
         Editar
       </Button>
       <Button
+        data-testid="edit-dragon-back-button"
         disabled={isEditing}
         variant={BUTTON_VARIANTS.Tertiary}
         onClick={handleGoBack}

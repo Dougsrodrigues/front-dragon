@@ -2,7 +2,7 @@ import './styles.scss';
 
 import { SignOut } from 'phosphor-react';
 
-import { useSignOut } from '../../../authentication/hooks/useSignOut';
+import { useSignOut } from '@/modules/authentication/hooks/useSignOut';
 
 export function Header() {
   const { handleSignOut } = useSignOut();

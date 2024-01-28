@@ -11,6 +11,16 @@ const listDragonsHandlerWithValues = http.get(
   },
 );
 
+const getDragonByIdHandler = http.get(
+  `${BASE_URL}/dragon/:id`,
+  async ({ params }) => {
+    const { id } = params;
+    const findDragon = LIST_DRAGONS_MOCK.find(dragon => dragon.id === id);
+
+    return Response.json(findDragon);
+  },
+);
+
 const deleteDragonHandler = http.delete(
   `${BASE_URL}/dragon/:id`,
   async ({ params }) => {
@@ -29,4 +39,5 @@ export const dragonHandlers = [
   listDragonsHandlerWithValues,
   deleteDragonHandler,
   createDragonHandler,
+  getDragonByIdHandler,
 ];
