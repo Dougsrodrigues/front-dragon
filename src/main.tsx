@@ -3,10 +3,10 @@ import './modules/app/styles/reset.scss';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { Providers } from './modules/app/infra/providers';
+import { App } from './modules/app/app';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Providers />
+    <App />
   </React.StrictMode>,
 );

@@ -28,7 +28,7 @@ export function CardDragons({
 
       <h1>{dragon.name}</h1>
       <span className="card-dragons-createdAt">
-        Criado em: {dragon.createdAt}
+        Criado em: {String(dragon.createdAt)}
       </span>
       <div className="card-dragons-description">
         <p>{dragon.histories}</p>

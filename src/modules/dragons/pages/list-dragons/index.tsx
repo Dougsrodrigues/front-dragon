@@ -21,10 +21,10 @@ export function ListDragons() {
           Cadastrar um novo Dragão
         </Button>
       </div>
-      <div className="list-dragons-container">
+      <div data-testid="list-dragons-page" className="list-dragons-container">
         {dragons?.map(dragon => (
           <CardDragons
-            key={dragon.id}
+            key={dragon.id + dragon.name}
             dragon={dragon}
             handleClickSeeDetails={handleClickSeeDetails}
           />

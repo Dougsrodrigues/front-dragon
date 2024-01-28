@@ -25,7 +25,7 @@ export function useListDragons() {
 
       return {
         ...dragon,
-        createdAt: isValidDate ? dateFormat.format(date) : date,
+        createdAt: isValidDate ? dateFormat.format(date) : dragon.createdAt,
       };
     });
   }, [dragons]);
