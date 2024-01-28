@@ -1,6 +1,6 @@
 import { type z } from 'zod';
 
-import { type signInSchema } from '../schemas';
+import { type signInSchema } from './schemas';
 
 export interface HandleSignInProps {
   email: string;
