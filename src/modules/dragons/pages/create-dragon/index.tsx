@@ -25,21 +25,38 @@ export function CreateDragon() {
     <form
       onSubmit={handleSubmit(handleCreateDragon)}
       className="create-dragon-container"
+      data-testid="create-dragon-form"
     >
       <h1>Cadastre um Dragão</h1>
 
-      <Input label="Nome" {...register('name')} error={errors?.name?.message} />
-      <Input label="Tipo" {...register('type')} error={errors?.type?.message} />
+      <Input
+        data-testid="create-dragon-form-name-input"
+        label="Nome"
+        {...register('name')}
+        error={errors?.name?.message}
+      />
+      <Input
+        data-testid="create-dragon-form-type-input"
+        label="Tipo"
+        {...register('type')}
+        error={errors?.type?.message}
+      />
       <TextArea
+        data-testid="create-dragon-form-histories-input"
         label="Sobre"
         {...register('histories')}
         error={errors?.histories?.message}
       />
 
-      <Button isLoading={isCreating} disabled={isCreating}>
+      <Button
+        data-testid="create-dragon-register-button"
+        isLoading={isCreating}
+        disabled={isCreating}
+      >
         Cadastrar
       </Button>
       <Button
+        data-testid="create-dragon-back-button"
         disabled={isCreating}
         variant={BUTTON_VARIANTS.Tertiary}
         onClick={handleGoBack}

@@ -1,3 +1,3 @@
-import { listDragonsHandlers } from './list-dragons-handler';
+import { dragonHandlers } from './dragon-handlers';
 
-export const handlers = [...listDragonsHandlers];
+export const handlers = [...dragonHandlers];

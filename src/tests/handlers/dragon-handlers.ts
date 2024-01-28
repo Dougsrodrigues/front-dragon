@@ -21,7 +21,12 @@ const deleteDragonHandler = http.delete(
   },
 );
 
-export const listDragonsHandlers = [
+const createDragonHandler = http.post(`${BASE_URL}/dragon`, async () => {
+  return new Response(null);
+});
+
+export const dragonHandlers = [
   listDragonsHandlerWithValues,
   deleteDragonHandler,
+  createDragonHandler,
 ];
