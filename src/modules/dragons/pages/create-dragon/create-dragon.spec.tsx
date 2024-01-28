@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 import { LOCAL_STORAGE_AUTHENTICATION_KEY } from '@/modules/authentication/utils/constants';
 import { localStorageMock } from '@/tests/mocks/local-storage-mock';
-import { responseSignIn } from '@/tests/mocks/mock-sign-in';
+import { SIGN_IN_RESPONSE_MOCK } from '@/tests/mocks/mock-sign-in';
 import {
   cleanup,
   fireEvent,
@@ -24,7 +24,7 @@ describe('Create Dragons Page', () => {
   beforeAll(() => {
     localStorageMock.set(
       LOCAL_STORAGE_AUTHENTICATION_KEY,
-      JSON.stringify(responseSignIn),
+      JSON.stringify(SIGN_IN_RESPONSE_MOCK),
     );
   });
 
