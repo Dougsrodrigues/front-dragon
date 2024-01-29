@@ -27,3 +27,6 @@ Write aplication for Dragon Frontend, which should be a single-page web applicat
 
 4. Start the development server:
 ``npm run dev``
+
+5. Login - Enter with any email and password
+
