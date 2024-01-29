@@ -20,12 +20,10 @@ export const routesConfig = [
         element: <AuthenticatedLayout />,
         children: [
           {
-            index: true,
             path: '/',
             element: <ListDragons />,
           },
           {
-            index: true,
             path: '/dragon',
             element: <CreateDragon />,
           },
