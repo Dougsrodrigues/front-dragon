@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Dragon Frontend Dev Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective
+Write aplication for Dragon Frontend, which should be a single-page web application using React in either TypeScript or JavaScript.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: Vite (React + TypeScript)
+- **HTTP Requests**: Axios + React Query
+- **Styling**: Sass
+- **Test**: Jest, React testing library and MSW
 
-## Expanding the ESLint configuration
+## Design Concerns
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Simplicity, Legibility and Code Readabilit** A modular construction approach was adopted, applying concepts such as custom pattern hooks and single responsibility. The objective was the easily understandable and modifiable codebase.
 
-- Configure the top-level `parserOptions` property like this:
+## Running the Project
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clone the repository:
+  ``git clone https://github.com/Dougsrodrigues/front-dragon``
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Navigate to the project directory:
+``cd front-dragon``
+
+3. Install dependencies:
+``npm install``
+
+4. Start the development server:
+``npm run dev``
