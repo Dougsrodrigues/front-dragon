@@ -35,9 +35,17 @@ const createDragonHandler = http.post(`${BASE_URL}/dragon`, async () => {
   return new Response(null);
 });
 
+export const createWithErrorDragonHandler = http.post(
+  `${BASE_URL}/dragon`,
+  async () => {
+    return Response.error();
+  },
+);
+
 export const dragonHandlers = [
   listDragonsHandlerWithValues,
   deleteDragonHandler,
   createDragonHandler,
   getDragonByIdHandler,
+  createWithErrorDragonHandler,
 ];
