@@ -9,6 +9,7 @@ import {
 
 import { dragonsServices } from '../services/dragons-service';
 import { LIST_DRAGONS_KEY } from '../utils/constants';
+import { type DragonsResponse } from '../utils/types';
 
 export function useListDragons() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export function useListDragons() {
     staleTime: 60 * 1000, // 10 minutes
   });
 
-  const formattedDragons = useMemo(() => {
+  const formattedDragons: DragonsResponse[] = useMemo(() => {
     if (dragons == null) return [];
 
     return dragons?.map(dragon => {
