@@ -9,6 +9,8 @@ Write aplication for Dragon Frontend, which should be a single-page web applicat
 - **HTTP Requests**: Axios + React Query
 - **Styling**: Sass
 - **Test**: Jest, React testing library and MSW
+- **Lint**: ESLint + Pritter + editorConfig
+- **Docs**: Storybook
 
 ## Design Concerns
 
