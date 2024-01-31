@@ -25,7 +25,6 @@ describe('useCreateDragon', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     const { result } = renderHook(useCreateDragon);
 
-    console.log(result);
     await waitFor(async () => {
       await result.current.handleCreateDragon(CREATE_DRAGON_MOCK);
       expect(result.current.isCreating).toBe(false);
