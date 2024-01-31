@@ -1,6 +1,6 @@
 import { getContrast } from 'polished';
 
-import { colors } from '../utils/colors';
+import { colors } from '../tokens/colors';
 
 export function ColorsGrid() {
   return colors.map(({ key, color }) => {
