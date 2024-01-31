@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import '@/modules/app/styles/colors.scss'
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +9,12 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    docs: {
+      theme: '$base-title'
+    },
+    backgrounds: {
+      default: 'dark'
     },
   },
 };
