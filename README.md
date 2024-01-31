@@ -14,6 +14,13 @@ Write aplication for Dragon Frontend, which should be a single-page web applicat
 
 - **Simplicity, Legibility and Code Readabilit** A modular construction approach was adopted, applying concepts such as custom pattern hooks and single responsibility. The objective was the easily understandable and modifiable codebase.
 
+## Notes
+
+ ### Authentication
+  For authentication, currently it is only being verified whether the value saved in the localhost after login is true or false. If the verification results as false, the user will be redirected to the login page, as we can see in the ProtectedRoutes component.
+
+  A more suitable approach would be to work with strategies like JWT, for example. Considering that we are working with axios, we could create an interceptor to check the status code of the requests. If it returns 401, we would handle that response accordingly.
+
 ## Running the Project
 
 1. Clone the repository:
