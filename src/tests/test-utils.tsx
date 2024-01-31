@@ -1,3 +1,4 @@
+/* eslint-disable import/export */
 import {
   QueryCache,
   QueryClient,
@@ -50,10 +51,9 @@ function customRenderHook<TProps, TResult>(
     ...options,
   });
 }
-// eslint-disable-next-line import/export
+
 export * from '@testing-library/react';
 
-// eslint-disable-next-line import/export
 export { customRender as render };
-// eslint-disable-next-line import/export
+
 export { customRenderHook as renderHook };
