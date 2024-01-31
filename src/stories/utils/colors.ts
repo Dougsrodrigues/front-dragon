@@ -1,0 +1,18 @@
+export const colors = [
+  { key: 'white', color: '#FFF' },
+  { key: 'background', color: '#FAFAFA' },
+  { key: 'base-card', color: '#F3F2F2' },
+  { key: 'base-input', color: '#EDEDED' },
+  { key: 'base-button', color: '#E6E5E5' },
+  { key: 'base-error', color: '#f84747' },
+  { key: 'base-error-light', color: '#e06060a8' },
+  { key: 'primary', color: '#403328' },
+  { key: 'yellow-light', color: '#F1E9C9' },
+  { key: 'yellow-dark', color: '#C47F17' },
+  { key: 'yellow', color: '#DBAC2C' },
+  { key: 'base-title', color: '#272221' },
+  { key: 'base-subtitle', color: '#403937' },
+  { key: 'purple-dark', color: '#4B2995' },
+  { key: 'purple', color: '#8047F8' },
+  { key: 'base-text', color: '#574F4D' },
+];
