@@ -24,3 +24,8 @@ export const Secondary: Story = {
     variant: BUTTON_VARIANTS.Secondary,
   },
 };
+export const Tertiary: Story = {
+  args: {
+    variant: BUTTON_VARIANTS.Tertiary,
+  },
+};
