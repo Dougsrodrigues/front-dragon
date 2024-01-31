@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ColorsGrid } from '../components/color-grid';
+import { ColorsGrid } from '../../components/color-grid';
 
 const meta = {
   title: 'TOKENS/Colors',

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TokensGrid } from '../components/tokens-grid';
-import { fontSizes } from '../tokens/font-sizes';
+import { TokensGrid } from '../../components/tokens-grid';
+import { fontSizes } from '../../tokens/font-sizes';
 
 const meta = {
   title: 'TOKENS/Fontsize',
