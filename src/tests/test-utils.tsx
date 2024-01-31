@@ -5,10 +5,14 @@ import {
 } from '@tanstack/react-query';
 import {
   render as renderTestingLibrary,
+  renderHook as renderHookTestingLibrary,
+  type RenderHookOptions,
+  type RenderHookResult,
   type RenderOptions,
 } from '@testing-library/react';
 import { type ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { Toaster } from 'sonner';
 
 export const queryCache = new QueryCache();
 
@@ -27,6 +31,7 @@ const AllTheProviders = ({ children }: AllTheProvidersProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <MemoryRouter initialEntries={['/']}>{children}</MemoryRouter>;
+      <Toaster />
     </QueryClientProvider>
   );
 };
@@ -36,8 +41,19 @@ const customRender = (
   options?: Omit<RenderOptions, 'wrapper'>,
 ) => renderTestingLibrary(ui, { wrapper: AllTheProviders, ...options });
 
+function customRenderHook<TProps, TResult>(
+  callback: (props: TProps) => TResult,
+  options?: RenderHookOptions<TProps>,
+): RenderHookResult<TResult, TProps> {
+  return renderHookTestingLibrary(callback, {
+    wrapper: AllTheProviders,
+    ...options,
+  });
+}
 // eslint-disable-next-line import/export
 export * from '@testing-library/react';
 
 // eslint-disable-next-line import/export
 export { customRender as render };
+// eslint-disable-next-line import/export
+export { customRenderHook as renderHook };
